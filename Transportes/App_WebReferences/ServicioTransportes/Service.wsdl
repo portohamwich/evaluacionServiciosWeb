@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:3840/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:3840/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:3840/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_getRoutes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRoutes" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRoutes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRoute" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getViajes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getViajes" />
+  </wsdl:message>
+  <wsdl:message name="IService_getViajes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getViajesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getViaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:getViaje" />
+  </wsdl:message>
+  <wsdl:message name="IService_getViaje_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getViajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllClientes" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAllClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCliente" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_exist_InputMessage">
+    <wsdl:part name="parameters" element="tns:exist" />
+  </wsdl:message>
+  <wsdl:message name="IService_exist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:existResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_session_InputMessage">
+    <wsdl:part name="parameters" element="tns:session" />
+  </wsdl:message>
+  <wsdl:message name="IService_session_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="getRoutes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRoutes" message="tns:IService_getRoutes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRoutesResponse" message="tns:IService_getRoutes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRoute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRoute" message="tns:IService_getRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRouteResponse" message="tns:IService_getRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getViajes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getViajes" message="tns:IService_getViajes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getViajesResponse" message="tns:IService_getViajes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getViaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getViaje" message="tns:IService_getViaje_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getViajeResponse" message="tns:IService_getViaje_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAllClientes" message="tns:IService_getAllClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAllClientesResponse" message="tns:IService_getAllClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCliente" message="tns:IService_getCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getClienteResponse" message="tns:IService_getCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertCliente" message="tns:IService_insertCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertClienteResponse" message="tns:IService_insertCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateCliente" message="tns:IService_updateCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateClienteResponse" message="tns:IService_updateCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="exist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/exist" message="tns:IService_exist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/existResponse" message="tns:IService_exist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="session">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/session" message="tns:IService_session_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/sessionResponse" message="tns:IService_session_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getRoutes">
+      <soap:operation soapAction="http://tempuri.org/IService/getRoutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoute">
+      <soap:operation soapAction="http://tempuri.org/IService/getRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViajes">
+      <soap:operation soapAction="http://tempuri.org/IService/getViajes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getViaje">
+      <soap:operation soapAction="http://tempuri.org/IService/getViaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllClientes">
+      <soap:operation soapAction="http://tempuri.org/IService/getAllClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/getCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/insertCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCliente">
+      <soap:operation soapAction="http://tempuri.org/IService/updateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exist">
+      <soap:operation soapAction="http://tempuri.org/IService/exist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="session">
+      <soap:operation soapAction="http://tempuri.org/IService/session" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:3840/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
