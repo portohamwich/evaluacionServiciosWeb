@@ -54,7 +54,11 @@ public interface IService
 
     [OperationContract]
     bool NuevaVenta(string objeto);
-
     #endregion 
+
+    #region PAGO
+    [OperationContract]
+    DataTable pago(string datos);
+    #endregion  
 
 }
