@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Evaluacion(1)", "http://localhost:5812", "{D706763A-A077-492B-A34B-BA826F59EA40}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5812"
+		Debug.AspNetCompiler.PhysicalPath = "..\Evaluacion\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5812\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5812"
+		Release.AspNetCompiler.PhysicalPath = "..\Evaluacion\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5812\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Evaluacion\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Transportes(1)", "http://localhost:5813", "{18D30428-1113-4DE4-B668-3241565164E0}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5813"
+		Debug.AspNetCompiler.PhysicalPath = "..\Transportes\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5813\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5813"
+		Release.AspNetCompiler.PhysicalPath = "..\Transportes\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5813\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Transportes\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D706763A-A077-492B-A34B-BA826F59EA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D706763A-A077-492B-A34B-BA826F59EA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D30428-1113-4DE4-B668-3241565164E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D30428-1113-4DE4-B668-3241565164E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
