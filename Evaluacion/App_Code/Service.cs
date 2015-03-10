@@ -105,7 +105,7 @@ public class Service : IService
             linea = linea + objTrans.nombre.ToString() + ",";
             linea = linea + objTrans.IdVenta.ToString() + ",";
             linea = linea + objTrans.Tarjeta.ToString() + ",";
-            linea = linea + objTrans.FechaExp.ToString("yyyyMMdd") + ",";
+            linea = linea + objTrans.FechaExp.ToString() + ",";
             linea = linea + String.Format("{0:0.00}", objTrans.Cantidad) + ",";
             linea = linea + objTrans.Codigo.ToString();
             archivo.WriteLine(linea);
