@@ -42,23 +42,10 @@ public partial class viajes : System.Web.UI.Page
         }
         else
         {
-
-            ServicioTransportes.ServiceClient sc = new ServicioTransportes.ServiceClient();
             Viaje v = new Viaje();
             v = listaViajes[GridView1.SelectedRow.RowIndex];
 
-            Venta sale = new Venta();
-            sale.Asiento = "1";
-            sale.Cantidad = 1;
-            sale.Costo = decimal.Parse(v.Costo);
-            sale.Idviaje = v.ruta.id;
-            sale.Idcliente = int.Parse(Session["sesIdCliente"].ToString());
-            sale.Total = sale.Costo * sale.Cantidad;
-            string values = JsonConvert.SerializeObject(sale);
-
-            int result = sc.NuevaVenta(values);
-
-            
+            Server.Transfer("compra.aspx?viajeid=" + v.id + "&costo=" + v.Costo);
         }
     }
 }
