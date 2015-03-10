@@ -171,11 +171,11 @@ public class Service : IService
         return dttDatos;
     }
 
-    public bool NuevaVenta(string objeto)
+    public int NuevaVenta(string objeto)
     {
         ClsVentas objVenta = new ClsVentas();
         objVenta = Newtonsoft.Json.JsonConvert.DeserializeObject<ClsVentas>(objeto);
-        bool valido = objVenta.insertaDatos();
+        int valido = objVenta.insertaDatos();
         return valido;
     }
 }

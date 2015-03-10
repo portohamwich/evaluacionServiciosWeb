@@ -44,6 +44,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Transportes(1)", "http://lo
 		Release.AspNetCompiler.Debug = "False"
 		SlnRelativePath = "..\Transportes\"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{D706763A-A077-492B-A34B-BA826F59EA40} = {D706763A-A077-492B-A34B-BA826F59EA40}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

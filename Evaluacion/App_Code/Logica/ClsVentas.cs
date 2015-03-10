@@ -18,7 +18,8 @@ public class ClsVentas: ILogica
     
         public ClsVentas()
         {
-            _objDatos = new ClsNegociaSql( System.Configuration.ConfigurationManager.ConnectionStrings["Manuel"].ConnectionString);
+            string cadenaCnn = System.Configuration.ConfigurationManager.ConnectionStrings["CadenaSqlSrv"].ConnectionString;
+            _objDatos = new ClsNegociaSql(cadenaCnn);
         }
 
         #endregion
@@ -30,6 +31,7 @@ public class ClsVentas: ILogica
     {
         set { _objDatos = value; }
     }
+
 
     private int _idventa;
     private int _idcliente;
@@ -167,24 +169,27 @@ public class ClsVentas: ILogica
         return datos;
     }
 
-    public bool insertaDatos()
+    public dynamic insertaDatos()
     {
         bool valido = false;
-        string comando = "INSERT INTO ventas (idcliente,idviaje,cantidad,costo,total,fechaventa,asiento) VALUES (@idcliente,@idviaje,@cantidad,@costo,@total,@fechaventa,@asiento)";
+        string comando = "INSERT INTO ventas (idcliente,idviaje,cantidad,costo,total,fechaventa,asiento) "
+                        + "VALUES (@idcliente,@idviaje,@cantidad,@costo,@total,GETDATE(),@asiento); " +
+                        "SELECT SCOPE_IDENTITY()";
         SqlParameter[] parametros = {
              new SqlParameter("idcliente",SqlDbType.Int)
              ,new SqlParameter("idviaje",SqlDbType.Int)             
              ,new SqlParameter("cantidad",SqlDbType.Int)
             , new SqlParameter("costo",SqlDbType.Decimal)
-             ,new SqlParameter("total",SqlDbType.Decimal)             
-             ,new SqlParameter("fechaventa",SqlDbType.DateTime)
+             ,new SqlParameter("total",SqlDbType.Decimal)
              ,new SqlParameter("asiento",SqlDbType.NVarChar,50)
-                                  };
-        Object[] valores = { _idcliente,_idviaje,_cantidad,_costo,_total,_fechaventa,_asiento};
-        int n = _objDatos.EjecutaComando(parametros, valores, comando, CommandType.Text);
-        if (n > 0)
-            valido = true;
-        return valido;
+        };
+
+        
+
+        Object[] valores = { _idcliente,_idviaje,_cantidad,_costo,_total,_asiento};
+        int n = _objDatos.EjecutaComandoEscalar(parametros, valores, comando, CommandType.Text);
+
+        return n;
     }
 
    public bool PagoTarjeta()
@@ -194,10 +199,10 @@ public class ClsVentas: ILogica
             
     }
 
-   public bool InsertaDatos() { return true; }
+   public dynamic InsertaDatos() { return true; }
    public bool ActualizaDatos() { return true; }
    public bool EliminaDatos() { return true; }
-
+   public bool Existe() { return true; }
     #endregion
 
 }

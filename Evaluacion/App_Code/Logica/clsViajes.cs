@@ -36,12 +36,14 @@ public class clsViajes : ILogica
             objViajes.Id = int.Parse(registro["id"].ToString());
 
             clsCamion camion = new clsCamion();
+            camion.Id = int.Parse(registro["idcamion"].ToString());
             camion.Marca = registro["marca"].ToString();
             camion.Modelo = registro["modelo"].ToString();
             camion.Capacidad = int.Parse(registro["capacidad"].ToString());
             objViajes.Camion = camion;
 
             clsRutas ruta = new clsRutas();
+            ruta.Id = int.Parse(registro["idruta"].ToString());
             ruta.Origen = registro["origen"].ToString();
             ruta.Destino = registro["destino"].ToString();
             objViajes.Ruta = ruta;
@@ -85,7 +87,8 @@ public class clsViajes : ILogica
         string datos = JsonConvert.SerializeObject(lstViajes);
         return datos;
     }
-    public bool InsertaDatos() { return true; }
+    public dynamic InsertaDatos() { return true; }
     public bool ActualizaDatos() { return true; }
     public bool EliminaDatos() { return true; }
+    public bool Existe() { return true; }
 }

@@ -8,6 +8,7 @@ using System.Web;
 /// </summary>
 public class Camion
 {
+    public int Id { get; set; }
     public string marca { get; set; }
     public string modelo { get; set;  }
 }

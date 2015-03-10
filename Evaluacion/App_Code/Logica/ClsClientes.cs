@@ -122,7 +122,7 @@ public class ClsClientes : ILogica
         return valido;
     }
 
-    public bool InsertaDatos()
+    public dynamic InsertaDatos()
     {
         bool valido = false;
 

@@ -109,6 +109,30 @@ public class ClsNegociaSql : ClsDatosSql, INegocia
         return n;
     }
 
+    public int EjecutaComandoEscalar(IDbDataParameter[] parametros, object[] valores, string sentencia, object tipoEjecucion)
+    {
+        int n = -1;
+        SqlCommand comando = ((SqlConnection)Conexion).CreateCommand();
+        try
+        {
+            comando.Connection = (SqlConnection)Conexion;
+            comando.CommandType = (CommandType)tipoEjecucion;
+            comando.CommandText = sentencia;
+            AsignaParametros(ref comando, (SqlParameter[])parametros);
+            AsignaValores(ref comando, valores);
+            var newId = comando.ExecuteScalar();
+
+            n = int.Parse(""+newId);
+            CierraConexion();
+        }
+        catch (Exception varEx)
+        {
+            _mensaje = varEx.Message;
+            n = -1;
+        }
+        return n;
+    }
+
     /*Ejecuta una serie de sentencias Sql, no retorna una consulta, en base al manejo de transacciones
 * Retorna: si hubo un error -1, o un número >0 si se realizó con éxito,
      * en caso de un error no hay commit, sino rollback, no se realiza ninguna acción

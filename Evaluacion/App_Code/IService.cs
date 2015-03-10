@@ -53,7 +53,7 @@ public interface IService
     string SeleccionaVentas();
 
     [OperationContract]
-    bool NuevaVenta(string objeto);
+    int NuevaVenta(string objeto);
     #endregion 
 
     #region PAGO

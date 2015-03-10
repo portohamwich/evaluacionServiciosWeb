@@ -9,9 +9,8 @@ interface ILogica
     dynamic ObjDatos { set; }
     string SeleccionaDatosJSON();
     dynamic SeleccionaDato();
-    DataTable Cliente();
     bool Existe();
-    bool InsertaDatos();
+    dynamic InsertaDatos();
     bool ActualizaDatos();
     bool EliminaDatos();
 }

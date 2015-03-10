@@ -63,7 +63,8 @@ public class clsRutas : ILogica
         return datos;
 
     }
-    public bool InsertaDatos(){ return true; }
+    public dynamic InsertaDatos(){ return true; }
     public bool ActualizaDatos() { return true; }
     public bool EliminaDatos() { return true; }
+    public bool Existe() { return true; }
 }

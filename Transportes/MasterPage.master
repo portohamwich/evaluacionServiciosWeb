@@ -13,11 +13,15 @@
     <form id="form1" runat="server">
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
+        <asp:Label ID="Label1" runat="server" Text="Label" CssClass="pull-right"></asp:Label>
+        <div style="clear:both"></div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    <div class="col-lg-1"></div>
+    <div class="col-lg-1">
+        
+        </div>
     </form>
 </body>
 </html>
