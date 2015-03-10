@@ -33,7 +33,7 @@ public partial class viajes : System.Web.UI.Page
         GridView1.DataBind();
     }
 
-    protected async void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
 
         if (Session["sesIdCliente"] == null)
@@ -45,7 +45,7 @@ public partial class viajes : System.Web.UI.Page
             Viaje v = new Viaje();
             v = listaViajes[GridView1.SelectedRow.RowIndex];
 
-            Server.Transfer("compra.aspx?viajeid=" + v.id + "&costo=" + v.Costo);
+            Response.Redirect("compra.aspx?viajeid=" + v.id + "&costo=" + v.Costo);
         }
     }
 }
