@@ -27,7 +27,7 @@ public class ClsTransaccion
     public int folio { get; set; }
     public DateTime Fecha { get; set; }
     public int Codigo { get; set; }
-    public DateTime FechaExp { get; set; }
+    public string FechaExp { get; set; }
     #endregion
 
     #region CONSTRUCTORES
