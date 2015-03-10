@@ -11,10 +11,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-10">
+    <div class="navbar navbar-inverse" style="border-radius: 0px;">
+        <h1 style="color:white; float: left;margin-left: 10px;">Sistema de compra de boletos de autobús</h1>
         <asp:Label ID="Label1" runat="server" Text="Label" CssClass="pull-right"></asp:Label>
         <div style="clear:both"></div>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>

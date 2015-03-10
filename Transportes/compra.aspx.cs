@@ -10,7 +10,7 @@ public partial class compra : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Panel2.Visible = false;
     }
     protected async void Button1_Click(object sender, EventArgs e)
     {
@@ -40,8 +40,15 @@ public partial class compra : System.Web.UI.Page
         values = JsonConvert.SerializeObject(t);
         Label3.Text = "Esperando autorización de pago";
         Button1.Enabled = false;
+        Panel1.Visible = false;
 
         var resultado = await sc.pagoAsync(values);
+        string res = resultado.pagoResult.Rows[0].ItemArray[5].ToString();
+
+        if (res == "S")
+        {
+            Panel2.Visible = true;
+        }
         
         Label3.Text = "";
     }
