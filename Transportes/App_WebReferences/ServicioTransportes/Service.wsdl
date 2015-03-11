@@ -91,6 +91,18 @@
   <wsdl:message name="IService_getDescuentos_OutputMessage">
     <wsdl:part name="parameters" element="tns:getDescuentosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Consulta_InputMessage">
+    <wsdl:part name="parameters" element="tns:Consulta" />
+  </wsdl:message>
+  <wsdl:message name="IService_Consulta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategorias_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategorias" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategorias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriasResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="getRoutes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getRoutes" message="tns:IService_getRoutes_InputMessage" />
@@ -147,6 +159,14 @@
     <wsdl:operation name="getDescuentos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getDescuentos" message="tns:IService_getDescuentos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getDescuentosResponse" message="tns:IService_getDescuentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Consulta" message="tns:IService_Consulta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConsultaResponse" message="tns:IService_Consulta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategorias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCategorias" message="tns:IService_getCategorias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCategoriasResponse" message="tns:IService_getCategorias_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -270,6 +290,24 @@
     </wsdl:operation>
     <wsdl:operation name="getDescuentos">
       <soap:operation soapAction="http://tempuri.org/IService/getDescuentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consulta">
+      <soap:operation soapAction="http://tempuri.org/IService/Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategorias">
+      <soap:operation soapAction="http://tempuri.org/IService/getCategorias" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

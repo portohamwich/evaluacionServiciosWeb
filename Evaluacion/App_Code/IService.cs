@@ -66,4 +66,14 @@ public interface IService
     string getDescuentos();
     #endregion
 
+    #region CONSULTA
+    [OperationContract]
+    string Consulta(string datos);
+    #endregion
+
+    #region CATEGORIAS
+    [OperationContract]
+    string getCategorias();
+    #endregion
+
 }

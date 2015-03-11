@@ -185,4 +185,18 @@ public class Service : IService
         string descuentos = objDescuento.SeleccionaDatosJSON();
         return descuentos;
     }
+
+    public string Consulta(string datos)
+    {
+        ClsConsulta objDatos;
+        objDatos = JsonConvert.DeserializeObject<ClsConsulta>(datos);
+        string c = objDatos.SeleccionaDatosJSON();
+        return c;       
+    }
+
+    public string getCategorias()
+    {
+        ClsCategoria objDatos = new ClsCategoria();
+        return objDatos.SeleccionaDatosJSON();
+    }
 }

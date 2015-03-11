@@ -53,7 +53,7 @@ public partial class compra : System.Web.UI.Page
         t.nombre = lblNombre.Text;
         t.Codigo = int.Parse(lblCodigo.Text);
         t.Tarjeta = lblNumero.Text;
-        t.Cantidad = decimal.Parse(lblCantidad.Text);
+        t.Cantidad = costo;
         values = JsonConvert.SerializeObject(t);
         Label3.Text = "Esperando autorización de pago";
         Button1.Enabled = false;
