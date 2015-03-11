@@ -10,6 +10,7 @@ interface ILogica
     string SeleccionaDatosJSON();
     dynamic SeleccionaDato();
     bool Existe();
+    DataTable Cliente();
     dynamic InsertaDatos();
     bool ActualizaDatos();
     bool EliminaDatos();

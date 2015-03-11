@@ -61,4 +61,9 @@ public interface IService
     DataTable pago(string datos);
     #endregion  
 
+    #region DESCUENTOS
+    [OperationContract]
+    string getDescuentos();
+    #endregion
+
 }

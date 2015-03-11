@@ -91,4 +91,5 @@ public class clsViajes : ILogica
     public bool ActualizaDatos() { return true; }
     public bool EliminaDatos() { return true; }
     public bool Existe() { return true; }
+    public DataTable Cliente() { return null; }
 }

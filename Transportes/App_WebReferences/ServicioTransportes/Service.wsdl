@@ -85,6 +85,12 @@
   <wsdl:message name="IService_pago_OutputMessage">
     <wsdl:part name="parameters" element="tns:pagoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getDescuentos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDescuentos" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDescuentos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDescuentosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="getRoutes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getRoutes" message="tns:IService_getRoutes_InputMessage" />
@@ -137,6 +143,10 @@
     <wsdl:operation name="pago">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/pago" message="tns:IService_pago_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/pagoResponse" message="tns:IService_pago_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDescuentos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getDescuentos" message="tns:IService_getDescuentos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getDescuentosResponse" message="tns:IService_getDescuentos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -251,6 +261,15 @@
     </wsdl:operation>
     <wsdl:operation name="pago">
       <soap:operation soapAction="http://tempuri.org/IService/pago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDescuentos">
+      <soap:operation soapAction="http://tempuri.org/IService/getDescuentos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

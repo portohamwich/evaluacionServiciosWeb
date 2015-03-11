@@ -41,9 +41,9 @@ public class ClsVentas: ILogica
     private decimal _total;
     private DateTime _fechaventa;
     private string _asiento;
+    private int _iddescuento;
 
- 
-
+       
     public int Idcliente
     {
         get { return _idcliente; }
@@ -80,6 +80,11 @@ public class ClsVentas: ILogica
         get { return _asiento; }
         set { _asiento = value; }
     }
+    public int Iddescuento
+    {
+        get { return _iddescuento; }
+        set { _iddescuento = value; }
+    }
 
     #endregion
 
@@ -104,6 +109,8 @@ public class ClsVentas: ILogica
         if (!DateTime.TryParse(registro["fechaventa"].ToString(), out datofecha)) auxDato = 0;
         _total = auxDato;
         _asiento = registro["asiento"].ToString();
+        if (!int.TryParse(registro["iddescuento"].ToString(), out auxDato)) auxDato = 0;
+        _iddescuento = auxDato;
             }
 
     public ClsVentas AsignaVenta(DataRow registro)
@@ -171,9 +178,8 @@ public class ClsVentas: ILogica
 
     public dynamic insertaDatos()
     {
-        bool valido = false;
-        string comando = "INSERT INTO ventas (idcliente,idviaje,cantidad,costo,total,fechaventa,asiento) "
-                        + "VALUES (@idcliente,@idviaje,@cantidad,@costo,@total,GETDATE(),@asiento); " +
+        string comando = "INSERT INTO ventas (idcliente,idviaje,cantidad,costo,total,fechaventa,asiento,iddescuento) "
+                        + "VALUES (@idcliente,@idviaje,@cantidad,@costo,@total,GETDATE(),@asiento,@iddescuento); " +
                         "SELECT SCOPE_IDENTITY()";
         SqlParameter[] parametros = {
              new SqlParameter("idcliente",SqlDbType.Int)
@@ -182,11 +188,12 @@ public class ClsVentas: ILogica
             , new SqlParameter("costo",SqlDbType.Decimal)
              ,new SqlParameter("total",SqlDbType.Decimal)
              ,new SqlParameter("asiento",SqlDbType.NVarChar,50)
+             ,new SqlParameter("iddescuento",SqlDbType.Int)
         };
 
         
 
-        Object[] valores = { _idcliente,_idviaje,_cantidad,_costo,_total,_asiento};
+        Object[] valores = { _idcliente,_idviaje,_cantidad,_costo,_total,_asiento,_iddescuento};
         int n = _objDatos.EjecutaComandoEscalar(parametros, valores, comando, CommandType.Text);
 
         return n;
@@ -196,13 +203,13 @@ public class ClsVentas: ILogica
     {
         bool valido = false;
         return valido;
-            
     }
 
    public dynamic InsertaDatos() { return true; }
    public bool ActualizaDatos() { return true; }
    public bool EliminaDatos() { return true; }
    public bool Existe() { return true; }
+   public DataTable Cliente() { return null; }
     #endregion
 
 }

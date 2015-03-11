@@ -15,4 +15,5 @@ public class Venta
     public decimal Total { get; set; }
     public DateTime Fechaventa { get; set; }
     public string Asiento { get; set; }
+    public int Iddescuento { get; set; }
 }

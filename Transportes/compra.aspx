@@ -33,6 +33,11 @@
             <asp:TextBox ID="lblCantidad" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <div>
+
+            <asp:Label ID="Label6" runat="server" Text="Descuento"></asp:Label>
+            <asp:DropDownList ID="ddlDescuento" runat="server" CssClass="form-control"></asp:DropDownList>
+        </div>
+        <div>
             <asp:Button ID="Button1" runat="server" Text="Comprar" CssClass="btn btn-primary" OnClick="Button1_Click" />
         </div>
     </asp:Panel>

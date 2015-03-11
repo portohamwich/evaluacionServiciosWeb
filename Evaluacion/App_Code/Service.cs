@@ -178,4 +178,11 @@ public class Service : IService
         int valido = objVenta.insertaDatos();
         return valido;
     }
+
+    public string getDescuentos()
+    {
+        ClsDescuento objDescuento = new ClsDescuento();
+        string descuentos = objDescuento.SeleccionaDatosJSON();
+        return descuentos;
+    }
 }
