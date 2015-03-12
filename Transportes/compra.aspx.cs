@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,8 +15,8 @@ public partial class compra : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Panel2.Visible = false;
-        if (!Page.IsPostBack)
-            Descuentos();
+        //if (!Page.IsPostBack)
+        //    Descuentos();
     }
     protected async void Button1_Click(object sender, EventArgs e)
     {
@@ -25,15 +26,28 @@ public partial class compra : System.Web.UI.Page
         ServicioTransportes.ServiceClient sc = new ServicioTransportes.ServiceClient();
 
         ///SE APLICA EL DESCUENTO
-        int idDesc = int.Parse(ddlDescuento.SelectedValue);
-        if (idDesc != 0)
+        DataTable dttDato = new DataTable();
+        ClsDescuento objDescuento = new ClsDescuento();
+        int idDesc = 0;
+        if (!txtDescuento.Text.Length.Equals(0))
         {
-            Descuentos();
-            var _des = (from d in lstDescuento where d.Id == idDesc select new { d.Descuento }).ToList();
+            objDescuento.Codigo = txtDescuento.Text;
+            dttDato = sc.getDescuento(JsonConvert.SerializeObject(objDescuento));
             decimal total = decimal.Parse(lblCantidad.Text) * costo;
-            decimal descuento = decimal.Parse(_des[0].Descuento.ToString());
+            decimal descuento = decimal.Parse(dttDato.Rows[0]["descuento"].ToString());
             costo = total - (total * descuento);
+            idDesc = int.Parse(dttDato.Rows[0]["id"].ToString());
         }
+
+        //int idDesc = int.Parse(ddlDescuento.SelectedValue);
+        //if (idDesc != 0)
+        //{
+        //    Descuentos();
+        //    var _des = (from d in lstDescuento where d.Id == idDesc select new { d.Descuento }).ToList();
+        //    decimal total = decimal.Parse(lblCantidad.Text) * costo;
+        //    decimal descuento = decimal.Parse(_des[0].Descuento.ToString());
+        //    costo = total - (total * descuento);
+        //}
 
         Venta sale = new Venta();
         sale.Cantidad = int.Parse(lblCantidad.Text);
@@ -70,16 +84,16 @@ public partial class compra : System.Web.UI.Page
         Label3.Text = "";
     }
 
-    protected void Descuentos()
-    {
-        ServicioTransportes.ServiceClient sc = new ServicioTransportes.ServiceClient();
-        string priceoff = sc.getDescuentos();
-        lstDescuento = JsonConvert.DeserializeObject<List<ClsDescuento>>(priceoff);
-        var desc = JsonConvert.DeserializeObject<List<ClsDescuento>>(priceoff);
-        var _res = from d in desc select new { d.Id, descuento = d.NombreCorto + " - " + d.Descuento };
-        ddlDescuento.DataSource = _res.ToList();
-        ddlDescuento.DataTextField = "descuento";
-        ddlDescuento.DataValueField = "id";
-        ddlDescuento.DataBind();
-    }
+    //protected void Descuentos()
+    //{
+    //    ServicioTransportes.ServiceClient sc = new ServicioTransportes.ServiceClient();
+    //    string priceoff = sc.getDescuentos();
+    //    lstDescuento = JsonConvert.DeserializeObject<List<ClsDescuento>>(priceoff);
+    //    var desc = JsonConvert.DeserializeObject<List<ClsDescuento>>(priceoff);
+    //    var _res = from d in desc select new { d.Id, descuento = d.NombreCorto + " - " + d.Descuento };
+    //    ddlDescuento.DataSource = _res.ToList();
+    //    ddlDescuento.DataTextField = "descuento";
+    //    ddlDescuento.DataValueField = "id";
+    //    ddlDescuento.DataBind();
+    //}
 }

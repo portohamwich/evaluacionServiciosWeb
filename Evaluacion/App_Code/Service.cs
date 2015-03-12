@@ -186,6 +186,14 @@ public class Service : IService
         return descuentos;
     }
 
+    public DataTable getDescuento(string dato) 
+    {
+        ClsDescuento objDato;
+        objDato = JsonConvert.DeserializeObject<ClsDescuento>(dato);
+        DataTable dttDatos = objDato.SeleccionaDato();
+        return dttDatos;
+    }
+
     public string Consulta(string datos)
     {
         ClsConsulta objDatos;

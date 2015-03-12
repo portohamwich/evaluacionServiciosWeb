@@ -64,6 +64,9 @@ public interface IService
     #region DESCUENTOS
     [OperationContract]
     string getDescuentos();
+
+    [OperationContract]
+    DataTable getDescuento(string dato);
     #endregion
 
     #region CONSULTA

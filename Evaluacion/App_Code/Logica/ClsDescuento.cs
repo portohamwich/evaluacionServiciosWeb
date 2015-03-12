@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -59,7 +60,18 @@ public class ClsDescuento
         return datos;
     }
 
-    public dynamic SeleccionaDato() { return null; }
+    public dynamic SeleccionaDato() 
+    {
+        DataTable dttDatos = new DataTable();
+        string sentencia = "SELECT * FROM descuentos WHERE codigo = @codigo";
+        SqlParameter[] parametros = {
+        new SqlParameter ("codigo", SqlDbType.NVarChar,50)
+        };
+        object[] valores = { Codigo };
+        dttDatos = (DataTable)_objDatos.EjecutaAdaptador(parametros, valores, sentencia, CommandType.Text, "Cliente");
+        return dttDatos;
+    }
+
     public DataTable Cliente() { return null; }
     public bool Existe() { return false; }
     public dynamic InsertaDatos() { return false; }

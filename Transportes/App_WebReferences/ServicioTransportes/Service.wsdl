@@ -91,6 +91,12 @@
   <wsdl:message name="IService_getDescuentos_OutputMessage">
     <wsdl:part name="parameters" element="tns:getDescuentosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getDescuento_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDescuento" />
+  </wsdl:message>
+  <wsdl:message name="IService_getDescuento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDescuentoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Consulta_InputMessage">
     <wsdl:part name="parameters" element="tns:Consulta" />
   </wsdl:message>
@@ -159,6 +165,10 @@
     <wsdl:operation name="getDescuentos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getDescuentos" message="tns:IService_getDescuentos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getDescuentosResponse" message="tns:IService_getDescuentos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDescuento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getDescuento" message="tns:IService_getDescuento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getDescuentoResponse" message="tns:IService_getDescuento_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Consulta">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Consulta" message="tns:IService_Consulta_InputMessage" />
@@ -290,6 +300,15 @@
     </wsdl:operation>
     <wsdl:operation name="getDescuentos">
       <soap:operation soapAction="http://tempuri.org/IService/getDescuentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDescuento">
+      <soap:operation soapAction="http://tempuri.org/IService/getDescuento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
