@@ -61,7 +61,7 @@ public partial class consulta : System.Web.UI.Page
         objDato._ruta = _ruta;
         objDato._tarjeta = _tarjeta;
         objDato._fechaini = _fechaini + " 00:00:00";
-        objDato._fechafin = _fechafin + " 11:59:00";
+        objDato._fechafin = _fechafin + " 23:59:59";
 
         ServicioTransportes.ServiceClient sc = new ServicioTransportes.ServiceClient();
         string datos = sc.Consulta(JsonConvert.SerializeObject(objDato));

@@ -16,6 +16,8 @@
         <div>
             <asp:Button ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" CssClass="btn btn-primary" />
         </div>
+        <a href="frmcliente.aspx">Regístrate</a>
+
     </div>
 <div class="col-lg-3 col-sm-3 col-md-3"></div>
 </asp:Content>

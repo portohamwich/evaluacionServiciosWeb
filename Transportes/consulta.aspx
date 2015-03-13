@@ -7,23 +7,35 @@
         <h2>Consulta</h2>
     </div>
     <div>
-        <label>Categoria</label>
-        <asp:DropDownList ID="ddlCategoria" runat="server"></asp:DropDownList>
-        <label>Descuento</label>
-        <asp:DropDownList ID="ddlDescuento" runat="server"></asp:DropDownList>
-        <label>Ruta</label>
-        <asp:DropDownList ID="ddlRuta" runat="server"></asp:DropDownList>
-        <label>Tarjeta</label>
-        <asp:TextBox ID="txtTarjeta" runat="server"></asp:TextBox>
-        <label>Fecha Inicio</label>
-        <asp:TextBox ID="txtFechaIni" runat="server"></asp:TextBox>
-        <label>Fecha Fin</label>
-        <asp:TextBox ID="txtFechaFin" runat="server"></asp:TextBox>
-        <label>Consultar</label>
-        <asp:Button ID="btnConsultar" runat="server" Text="Consultar" OnClick="btnConsultar_Click" />
+        <div class="col-lg-4">
+            <label>Categoria</label>
+            <asp:DropDownList ID="ddlCategoria" CssClass="form-control" runat="server"></asp:DropDownList>
+            <br />
+            <label>Descuento</label>
+            <asp:DropDownList CssClass="form-control" ID="ddlDescuento" runat="server"></asp:DropDownList>
+        </div>
+        
+        <div class="col-lg-4">
+            <label>Ruta</label>
+            <asp:DropDownList ID="ddlRuta" CssClass="form-control" runat="server"></asp:DropDownList>
+            <br />
+            <label>Tarjeta</label>
+            <asp:TextBox ID="txtTarjeta" CssClass="form-control" runat="server"></asp:TextBox>
+        </div>
+
+        <div class="col-lg-4">
+            <label>Fecha Inicio</label>
+            <asp:TextBox ID="txtFechaIni" runat="server"  CssClass="form-control"></asp:TextBox>
+            <br />
+            <label>Fecha Fin</label>
+            <asp:TextBox ID="txtFechaFin" runat="server"  CssClass="form-control"></asp:TextBox>
+        </div>
+
+        <asp:Button ID="btnConsultar" runat="server" CssClass="btn btn-primary" Text="Consultar" OnClick="btnConsultar_Click" />
     </div>
+    <br />
     <div>
-        <asp:GridView ID="gvConsulta" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="gvConsulta" runat="server" CssClass="table" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Cliente" />
                 <asp:BoundField DataField="origen" HeaderText="Origen" />

@@ -16,6 +16,12 @@
         <asp:Label ID="Label1" runat="server" Text="Label" CssClass="pull-right"></asp:Label>
         <div style="clear:both"></div>
     </div>
+    <div class="col-lg-12">
+        <a style="margin-right:10px;" href="viajes.aspx">Viajes</a>
+        <a style="margin-right:10px;" href="consulta.aspx">Consulta</a>
+    </div>
+        <div style="clear:both"></div>
+
     <div class="col-lg-1"></div>
     <div class="col-lg-10">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
